@@ -1,8 +1,5 @@
 import 'package:flutter_app_example/router/route_paths.dart';
-import 'package:flutter_app_example/src/ui/addition/addition_screen.dart';
-import 'package:flutter_app_example/src/ui/home/detail_task/detail_screen.dart';
 import 'package:flutter_app_example/src/ui/login/login_screen.dart';
-import 'package:flutter_app_example/src/ui/main/main_screen.dart';
 import 'package:flutter_app_example/src/ui/splash/splash_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -18,17 +15,6 @@ class AppPages {
       name: Routes.LOGIN,
       page: () => LoginScreen(),
     ),
-    GetPage(
-      name: Routes.MAIN_SCREEN,
-      page: () => MainScreen(),
-    ),
-    GetPage(name: Routes.ADDITION, page: () => AdditionScreen()),
-    GetPage(
-        name: Routes.DETAIL,
-        page: () => DetailScreen(
-              taskTransit: "",
-              dateTask: "",
-            )),
   ];
   static final unknownRoutePage =
       GetPage(name: Routes.ROOT, page: () => SplashScreen());

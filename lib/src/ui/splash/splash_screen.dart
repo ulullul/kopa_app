@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app_example/resources/styles.dart';
 import 'package:flutter_app_example/src/core/ui/states/base_statefull_screen.dart';
 import 'package:flutter_app_example/src/core/ui/widgets/base_stateful_widget.dart';
-import 'package:flutter_app_example/src/ui/custom/refresh_button.dart';
 import 'package:flutter_app_example/src/ui/splash/splash_controller.dart';
+import 'package:flutter_app_example/src/widgets/refresh_button.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends BaseStatefulWidget {
@@ -50,8 +50,9 @@ class SplashScreenState
                 Expanded(
                   child: ScaleTransition(
                       scale: animation,
-                      child: FlutterLogo(size: MediaQuery.of(context).size.width/2,)
-                  ),
+                      child: FlutterLogo(
+                        size: MediaQuery.of(context).size.width / 2,
+                      )),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8.0),

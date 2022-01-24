@@ -42,17 +42,8 @@ android {
         versionName flutterVersionName
         multiDexEnabled true
     }
-    signingConfigs {
-        release {
-            keyAlias 'mishatronic'
-            keyPassword 'mishatronic'
-            storeFile file('mishatronic.jks')
-            storePassword 'mishatronic'
-        }
 
-    }
-
-    buildTypes {
+/*    buildTypes {
         release {
             minifyEnabled true
             useProguard true
@@ -62,7 +53,7 @@ android {
         debug {
             signingConfig signingConfigs.release
         }
-    }
+    }*/
 }
 
 flutter {
@@ -72,7 +63,7 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     // Import the Firebase BoM
-    implementation platform('com.google.firebase:firebase-bom:28.3.0')
+    implementation platform('com.google.firebase:firebase-bom:29.0.4')
 
 
     // Add the dependency for the Firebase SDK for Google Analytics

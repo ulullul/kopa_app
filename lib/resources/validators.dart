@@ -1,5 +1,4 @@
 class Validators {
-
   static final RegExp _emailRegExp = RegExp(
     r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$',
   );
@@ -11,6 +10,9 @@ class Validators {
   );
   static final RegExp _nameRegExp = RegExp(
     r"^[a-zA-Zа-яА-ЯІіЄєЇї.' -]+$",
+  );
+  static final _numberRegExp = RegExp(
+    r"[0-9]",
   );
 
   static isNameValid(String name) {

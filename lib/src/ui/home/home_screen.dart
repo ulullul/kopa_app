@@ -16,9 +16,9 @@ class HomeScreen extends BaseStatefulWidget {
   }
 }
 
-class HomeScreenState extends BaseStatefulScreen<HomeScreen, HomeController> {
+class HomeScreenState extends BaseStatefulScreen<HomeScreen, SignUpController> {
   @override
-  HomeController getController() => HomeController();
+  SignUpController getController() => SignUpController();
 
   @override
   Widget buildBody() {
@@ -29,7 +29,12 @@ class HomeScreenState extends BaseStatefulScreen<HomeScreen, HomeController> {
           actions: [
             ObxValue(
                 (RxList list) => IconButton(
-                      icon: list.isNotEmpty ? const Icon(Icons.delete, color: colorAccent,) : const Offstage(),
+                      icon: list.isNotEmpty
+                          ? const Icon(
+                              Icons.delete,
+                              color: colorAccent,
+                            )
+                          : const Offstage(),
                       onPressed: () {
                         _showDialog();
                       },
@@ -74,7 +79,9 @@ class HomeScreenState extends BaseStatefulScreen<HomeScreen, HomeController> {
                                                 onPrimary: Colors.black),
                                             onPressed: () {
                                               ///   удалить с Firebase
-                                              controller.deleteTask(list[index]);
+                                              controller
+                                                  .deleteTask(list[index]);
+
                                               ///   удалить c экрана
                                               list.removeAt(index);
                                               Get.back();
@@ -114,7 +121,8 @@ class HomeScreenState extends BaseStatefulScreen<HomeScreen, HomeController> {
                                     VoidCallback openContainer) {
                                   return ListTile(
                                     leading: const Icon(Icons.date_range),
-                                    trailing: const Icon(Icons.visibility_outlined),
+                                    trailing:
+                                        const Icon(Icons.visibility_outlined),
                                     title: Text(list[index].task,
                                         maxLines: 1,
                                         softWrap: false,
@@ -173,6 +181,4 @@ class HomeScreenState extends BaseStatefulScreen<HomeScreen, HomeController> {
     return null;
     // return getAppBar(context, "HomeScreen", leading: getBack());
   }
-
 }
-

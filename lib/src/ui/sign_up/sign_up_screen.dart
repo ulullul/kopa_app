@@ -3,6 +3,7 @@ import 'package:flutter_app_example/src/core/ui/states/base_statefull_screen.dar
 import 'package:flutter_app_example/src/core/ui/widgets/base_stateful_widget.dart';
 import 'package:flutter_app_example/src/ui/login/widgets/login_title.dart';
 import 'package:flutter_app_example/src/ui/sign_up/utils/sign_up_form_fields.dart';
+import 'package:flutter_app_example/src/widgets/app_button.dart';
 import 'package:flutter_app_example/src/widgets/form/bordered_form_text_field.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
@@ -93,16 +94,9 @@ class SignUpScreenState
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Готово'),
-                    style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF0CCDE6),
-                      fixedSize: const Size(280, 34),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
-                    ),
+                  AppButton(
+                    onTap: () {},
+                    text: 'Готово',
                   ),
                 ],
               ),

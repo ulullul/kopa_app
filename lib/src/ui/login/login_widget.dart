@@ -24,15 +24,22 @@ class LoginWidgetState
       child: ObxValue<RxBool>(
         (value) {
           if (value.value) {
-            return LoginForm(formKey: controller.formKey);
+            return LoginForm(
+              formKey: controller.formKey,
+              isCodeSent: controller.showCode,
+              onVerify: controller.verifyPhone,
+              onNext: () {},
+            );
           }
           return LoginTypesButtons(
-            phone: () {},
+            phone: () {
+              controller.isMethodChosen.value = true;
+            },
             facebook: () {},
             google: () {},
           );
         },
-        controller.showCode,
+        controller.isMethodChosen,
       ),
     );
   }

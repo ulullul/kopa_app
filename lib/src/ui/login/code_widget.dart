@@ -54,8 +54,6 @@ class CodeWidgetState
                   Container(
                     padding: const EdgeInsets.only(left: 10, right: 10),
                     child: TextFormField(
-                      controller: controller.controllerCode,
-                      focusNode: controller.codeFocus,
                       keyboardType: TextInputType.phone,
                       decoration: getDecoration('  input code', '', 'Code', '',
                           Icons.unsubscribe_outlined),
@@ -69,14 +67,7 @@ class CodeWidgetState
                     width: double.infinity,
                     height: 55.0,
                     child: ElevatedButton.icon(
-                      onPressed: () {
-                        if (controller.controllerCode.text == "" ||
-                            controller.controllerCode.text.isEmpty) {
-                          _showDialog();
-                        } else {
-                          controller.verifyCode(controller.controllerCode.text);
-                        }
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(primary: colorAccent),
                       label: const Text("Verify",
                           style:

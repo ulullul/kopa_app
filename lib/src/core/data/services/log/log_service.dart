@@ -40,7 +40,7 @@ class LogService {
       _logger.e(err);
   }
 
-  void logPrint(String message, [Level? logLevel, StackTrace? stackTrace]) {
+  void logPrint(String? message, [Level? logLevel, StackTrace? stackTrace]) {
     if (logLevel == null)
       _logger.i(message, null, stackTrace);
     else

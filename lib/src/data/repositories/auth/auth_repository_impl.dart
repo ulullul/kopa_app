@@ -9,10 +9,8 @@ class AuthRepositoryImpl extends AuthRepository {
   @override
   Future<void> createUser(User user) async {
     firestoreUserData.doc(user.uid).set(UserModel(
-            id: user.uid,
-            firstName: 'firstName',
-            lastName: 'lastName',
-            phone: user.phoneNumber)
-        .toJson());
+          id: user.uid,
+          phone: user.phoneNumber,
+        ).toJson());
   }
 }

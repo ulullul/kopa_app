@@ -7,10 +7,13 @@ class UserRepositoryImpl extends UserRepository {
   final firestoreUserData = FirebaseFirestore.instance.collection('userData');
 
   @override
-  Future<UserModel> getUserData() => firestoreUserData
-      .doc(FirebaseAuth.instance.currentUser!.uid)
-      .get()
-      .then((data) => UserModel.fromJson(data.data())..id = data.id);
+  Future<UserModel?> getUserData() => firestoreUserData
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .get()
+          .then((data) {
+        if (!data.exists) return null;
+        return UserModel.fromJson(data.data())..id = data.id;
+      });
 
   @override
   Stream<UserModel> streamUserData() => firestoreUserData
@@ -20,6 +23,8 @@ class UserRepositoryImpl extends UserRepository {
 
   @override
   Future<void> updateUser(UserModel user) async {
-    firestoreUserData.doc(FirebaseAuth.instance.currentUser!.uid).set(user.toJson());
+    firestoreUserData
+        .doc(FirebaseAuth.instance.currentUser!.uid)
+        .set(user.toJson());
   }
 }

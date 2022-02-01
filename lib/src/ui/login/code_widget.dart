@@ -4,7 +4,6 @@ import 'package:flutter_app_example/resources/styles.dart';
 import 'package:flutter_app_example/src/core/ui/states/base_shared_controlled_state.dart';
 import 'package:flutter_app_example/src/core/ui/widgets/base_stateful_widget.dart';
 import 'package:flutter_app_example/src/ui/login/login_controller.dart';
-import 'package:get/get.dart';
 
 class CodeWidget extends BaseStatefulWidget {
   @override
@@ -86,25 +85,5 @@ class CodeWidgetState
         ),
       ],
     );
-  }
-
-  void _showDialog() {
-    Get.dialog(AlertDialog(
-      backgroundColor: colorPrimaryDark,
-      title: const Text("Registered"),
-      content: const Text("Input number code"),
-      actions: <Widget>[
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: colorAccent, // background
-            onPrimary: Colors.black, // foreground
-          ),
-          onPressed: () {
-            Get.back();
-          },
-          child: const Text("Close"), // cancel, //
-        ),
-      ],
-    ));
   }
 }

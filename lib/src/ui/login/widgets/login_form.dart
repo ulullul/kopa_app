@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_example/src/core/data/services/log/log_service.dart';
 import 'package:flutter_app_example/src/core/ui/widgets/base_stateless_widget.dart';
 import 'package:flutter_app_example/src/ui/login/utils/login_form_fields.dart';
 import 'package:flutter_app_example/src/widgets/app_button.dart';
@@ -27,15 +28,21 @@ class LoginForm extends BaseStatelessWidget {
       child: Column(
         children: [
           ObxValue<RxBool>(
-            (val) {
-              if (!val.value)
+            (isCodeSent) {
+              LogService().logPrint(isCodeSent.value.toString());
+              if (!isCodeSent.value) {
                 return BorderedFormTextField(
+                  key: Key(LoginFormFields.PHONE.toSimpleString()),
                   name: LoginFormFields.PHONE.toSimpleString(),
+                  initialValue: '',
                   hintText: 'Номер телефону',
                 );
+              }
               return BorderedFormTextField(
+                key: Key(LoginFormFields.CODE.toSimpleString()),
                 name: LoginFormFields.CODE.toSimpleString(),
                 hintText: 'Код верифікації номеру',
+                initialValue: '',
                 validator: FormBuilderValidators.compose([
                   (value) {
                     if (formKey
@@ -53,10 +60,10 @@ class LoginForm extends BaseStatelessWidget {
             isCodeSent,
           ),
           ObxValue<RxBool>(
-            (val) {
+            (isCodeSent) {
               return AppButton(
-                onTap: val.value ? onNext : onVerify,
-                text: val.value ? 'Далі' : 'Верифікувати',
+                onTap: isCodeSent.value ? onNext : onVerify,
+                text: isCodeSent.value ? 'Далі' : 'Верифікувати',
               );
             },
             isCodeSent,

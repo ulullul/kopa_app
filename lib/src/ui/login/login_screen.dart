@@ -20,29 +20,36 @@ class LoginScreenState
 
   @override
   Widget buildBody() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Expanded(
-          flex: 2,
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Image.asset(AppImages.mainLogo),
-          ),
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AppImages.mainLogo),
         ),
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              LoginTitle(),
-              LoginWidget(),
-            ],
-          ),
-        )
-      ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          /*Expanded(
+            flex: 2,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Image.asset(AppImages.mainLogo),
+            ),
+          ),*/
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                LoginTitle(),
+                LoginWidget(),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 

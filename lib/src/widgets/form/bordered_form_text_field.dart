@@ -7,6 +7,7 @@ class BorderedFormTextField extends BaseStatelessWidget {
   final String name, hintText;
   final EdgeInsets? padding;
   final FormFieldValidator<String>? validator;
+  final String? initialValue;
 
   const BorderedFormTextField({
     Key? key,
@@ -14,6 +15,7 @@ class BorderedFormTextField extends BaseStatelessWidget {
     required this.hintText,
     this.padding,
     this.validator,
+    this.initialValue,
   }) : super(key: key);
 
   @override
@@ -23,6 +25,7 @@ class BorderedFormTextField extends BaseStatelessWidget {
       child: FormBuilderTextField(
         name: name,
         validator: validator,
+        initialValue: initialValue,
         style: const TextStyle(color: Colors.white, fontSize: 14),
         decoration: InputDecoration(
           labelStyle: const TextStyle(

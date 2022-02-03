@@ -2,6 +2,7 @@ import 'package:flutter_app_example/router/route_paths.dart';
 import 'package:flutter_app_example/src/ui/login/login_screen.dart';
 import 'package:flutter_app_example/src/ui/sign_up/sign_up_screen.dart';
 import 'package:flutter_app_example/src/ui/splash/splash_screen.dart';
+import 'package:flutter_app_example/src/ui/upsert_screen/upsert_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppPages {
@@ -19,6 +20,10 @@ class AppPages {
     GetPage(
       name: Routes.SIGN_UP,
       page: () => SignUpScreen(),
+    ),
+    GetPage(
+      name: Routes.UPSERT,
+      page: () => UpsertScreen(),
     ),
     //TODO: add route home
   ];

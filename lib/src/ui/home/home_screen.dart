@@ -16,9 +16,9 @@ class HomeScreen extends BaseStatefulWidget {
   }
 }
 
-class HomeScreenState extends BaseStatefulScreen<HomeScreen, SignUpController> {
+class HomeScreenState extends BaseStatefulScreen<HomeScreen, UpsertController> {
   @override
-  SignUpController getController() => SignUpController();
+  UpsertController getController() => UpsertController();
 
   @override
   Widget buildBody() {

@@ -33,7 +33,6 @@ class SplashController extends BaseController with SplashTimerMixin {
   }
 
   Future<void> _getUserIsLoggedIn() async {
-    // LogService().logPrint(FirebaseAuth.instance.currentUser.toString());
     if (FirebaseAuth.instance.currentUser == null) {
       nextRoute = Routes.LOGIN;
     } else {
@@ -44,7 +43,7 @@ class SplashController extends BaseController with SplashTimerMixin {
   Future<void> _isUserSignedUp() async {
     try {
       final userData = await _userRepository.getUserData();
-      nextRoute = userData == null ? Routes.SIGN_UP : Routes.MAIN_SCREEN;
+      nextRoute = userData == null ? Routes.SIGN_UP : Routes.UPSERT;
     } catch (_) {
       nextRoute = Routes.LOGIN;
     }

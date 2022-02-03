@@ -6,4 +6,5 @@ class Routes {
   static const String ADDITION = "/addition";
   static const String DETAIL = "/detail";
   static const String SIGN_UP = "/sign-up";
+  static const String UPSERT = '/upsert';
 }

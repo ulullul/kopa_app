@@ -12,7 +12,7 @@ class UserRepositoryImpl extends UserRepository {
           .get()
           .then((data) {
         if (!data.exists) return null;
-        return UserModel.fromJson(data.data())..id = data.id;
+        return UserModel.fromJson(data.data());
       });
 
   @override

@@ -9,7 +9,7 @@ ThemeData buildThemeData() {
       brightness: Brightness.light,
       primaryColor: colorPrimary,
       accentColor: colorAccent,
-      // dividerColor: colorGrey18,
+      // dividerColor: colorGrey18
       primaryColorDark: colorPrimaryDark,
       scaffoldBackgroundColor: colorPrimary,
       primaryTextTheme:

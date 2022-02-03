@@ -27,7 +27,7 @@ class UserModel {
     map['phone'] = this.phone;
     map['firstName'] = this.firstName;
     map['lastName'] = this.lastName;
-    map['email'] = this.city;
+    map['city'] = this.city;
     return map;
   }
 }

@@ -20,6 +20,7 @@ class AppPages {
       name: Routes.SIGN_UP,
       page: () => SignUpScreen(),
     ),
+    //TODO: add route home
   ];
   static final unknownRoutePage =
       GetPage(name: Routes.ROOT, page: () => SplashScreen());

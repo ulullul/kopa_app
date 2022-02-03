@@ -39,7 +39,7 @@ class SignUpScreenState
             child: Column(
               children: [
                 BorderedFormTextField(
-                  name: SignUpFormFields.NAME.toSimpleString(),
+                  name: SignUpFormFields.FIRST_NAME.toSimpleString(),
                   hintText: "Iм'я",
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   validator: FormBuilderValidators.compose([
@@ -54,7 +54,7 @@ class SignUpScreenState
                   ]),
                 ),
                 BorderedFormTextField(
-                  name: SignUpFormFields.SURNAME.toSimpleString(),
+                  name: SignUpFormFields.LAST_NAME.toSimpleString(),
                   hintText: 'Прізвище',
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   validator: FormBuilderValidators.compose([
@@ -95,7 +95,7 @@ class SignUpScreenState
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   AppButton(
-                    onTap: () {},
+                    onTap: controller.submit,
                     text: 'Готово',
                   ),
                 ],

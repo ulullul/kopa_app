@@ -3,7 +3,7 @@ import 'package:flutter_app_example/src/core/data/services/log/log_service.dart'
 import 'package:flutter_app_example/src/core/ui/widgets/base_stateless_widget.dart';
 import 'package:flutter_app_example/src/ui/login/utils/login_form_fields.dart';
 import 'package:flutter_app_example/src/widgets/app_button.dart';
-import 'package:flutter_app_example/src/widgets/form/bordered_form_text_field.dart';
+import 'package:flutter_app_example/src/widgets/form/outlined_form_text_field.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:get/get.dart';
@@ -31,14 +31,14 @@ class LoginForm extends BaseStatelessWidget {
             (isCodeSent) {
               LogService().logPrint(isCodeSent.value.toString());
               if (!isCodeSent.value) {
-                return BorderedFormTextField(
+                return OutlinedFormTextField(
                   key: Key(LoginFormFields.PHONE.toSimpleString()),
                   name: LoginFormFields.PHONE.toSimpleString(),
                   initialValue: '',
                   hintText: 'Номер телефону',
                 );
               }
-              return BorderedFormTextField(
+              return OutlinedFormTextField(
                 key: Key(LoginFormFields.CODE.toSimpleString()),
                 name: LoginFormFields.CODE.toSimpleString(),
                 hintText: 'Код верифікації номеру',

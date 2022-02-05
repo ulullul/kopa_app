@@ -4,7 +4,8 @@ import 'package:flutter_app_example/src/core/ui/widgets/base_stateful_widget.dar
 import 'package:flutter_app_example/src/ui/home/home_controller.dart';
 import 'package:flutter_app_example/src/ui/upsert_screen/widgets/block_header.dart';
 import 'package:flutter_app_example/src/ui/utils/utils.dart';
-import 'package:flutter_app_example/src/widgets/form/outlined_form_text_field.dart';
+import 'package:flutter_app_example/src/widgets/form/cupertino_select_form_field.dart';
+import 'package:flutter_app_example/src/widgets/form/underlined_form_text_field.dart';
 
 class UpsertScreen extends BaseStatefulWidget {
   @override
@@ -23,10 +24,15 @@ class UpsertScreenState
     return Column(
       children: [
         BlockHeader(text: 'Модель'),
-        OutlinedFormTextField(
+        UnderlinedFormTextField(
           name: 'asd',
           hintText: '',
-        )
+        ),
+        BlockHeader(text: 'Матеріал'),
+        CupertinoSelectFormField(
+          name: 'asd',
+          selectItems: ['a', 'b', 'c', 'd'],
+        ),
       ],
     );
   }

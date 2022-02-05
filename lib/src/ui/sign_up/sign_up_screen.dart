@@ -4,7 +4,7 @@ import 'package:flutter_app_example/src/core/ui/widgets/base_stateful_widget.dar
 import 'package:flutter_app_example/src/ui/login/widgets/login_title.dart';
 import 'package:flutter_app_example/src/ui/sign_up/utils/sign_up_form_fields.dart';
 import 'package:flutter_app_example/src/widgets/app_button.dart';
-import 'package:flutter_app_example/src/widgets/form/bordered_form_text_field.dart';
+import 'package:flutter_app_example/src/widgets/form/outlined_form_text_field.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
 
@@ -38,7 +38,7 @@ class SignUpScreenState
             key: controller.formKey,
             child: Column(
               children: [
-                BorderedFormTextField(
+                OutlinedFormTextField(
                   name: SignUpFormFields.FIRST_NAME.toSimpleString(),
                   hintText: "Iм'я",
                   padding: const EdgeInsets.symmetric(vertical: 10),
@@ -53,7 +53,7 @@ class SignUpScreenState
                     },
                   ]),
                 ),
-                BorderedFormTextField(
+                OutlinedFormTextField(
                   name: SignUpFormFields.LAST_NAME.toSimpleString(),
                   hintText: 'Прізвище',
                   padding: const EdgeInsets.symmetric(vertical: 10),
@@ -70,7 +70,7 @@ class SignUpScreenState
                     },
                   ]),
                 ),
-                BorderedFormTextField(
+                OutlinedFormTextField(
                   name: SignUpFormFields.CITY.toSimpleString(),
                   hintText: 'Місто',
                   padding: const EdgeInsets.symmetric(vertical: 10),

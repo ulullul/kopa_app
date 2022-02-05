@@ -6,19 +6,62 @@ ThemeData buildThemeData() {
   final baseTheme = ThemeData.light();
 
   return ThemeData(
-      brightness: Brightness.light,
-      primaryColor: colorPrimary,
-      accentColor: colorAccent,
-      // dividerColor: colorGrey18
-      primaryColorDark: colorPrimaryDark,
-      scaffoldBackgroundColor: colorPrimary,
-      primaryTextTheme:
-          _buildTextTheme(baseTheme.primaryTextTheme, colorPrimaryText),
-      buttonColor: colorPrimary,
-      textButtonTheme: TextButtonThemeData(
-          style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all<Color>(colorAccent))),
-      textTheme: _buildTextTheme(baseTheme.textTheme, colorPrimaryText));
+    brightness: Brightness.light,
+    primaryColor: colorPrimary,
+    accentColor: colorAccent,
+    errorColor: errorColor,
+    // dividerColor: colorGrey18
+    primaryColorDark: colorPrimaryDark,
+    scaffoldBackgroundColor: colorPrimary,
+    primaryTextTheme:
+        _buildTextTheme(baseTheme.primaryTextTheme, colorPrimaryText),
+    buttonColor: colorPrimary,
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all<Color>(
+          colorAccent,
+        ),
+      ),
+    ),
+    inputDecorationTheme: InputDecorationTheme(
+      enabledBorder: UnderlineInputBorder(
+        borderRadius: BorderRadius.circular(50),
+        borderSide: BorderSide(
+          color: Color(0x60ffffff),
+          width: 1,
+        ),
+      ),
+      border: UnderlineInputBorder(
+        borderRadius: BorderRadius.circular(50),
+        borderSide: BorderSide(
+          color: Color(0x60ffffff),
+          width: 1,
+        ),
+      ),
+      focusedBorder: UnderlineInputBorder(
+        borderRadius: BorderRadius.circular(50),
+        borderSide: BorderSide(
+          color: Color(0xffffffff),
+          width: 1,
+        ),
+      ),
+      errorBorder: UnderlineInputBorder(
+        borderRadius: BorderRadius.circular(50),
+        borderSide: BorderSide(
+          color: Color(0x99ff0000),
+          width: 1,
+        ),
+      ),
+      focusedErrorBorder: UnderlineInputBorder(
+        borderRadius: BorderRadius.circular(50),
+        borderSide: BorderSide(
+          color: Color(0xffff0000),
+          width: 1,
+        ),
+      ),
+    ),
+    textTheme: _buildTextTheme(baseTheme.textTheme, colorPrimaryText),
+  );
 }
 
 TextTheme _buildTextTheme(TextTheme base, Color color) {

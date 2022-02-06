@@ -38,9 +38,9 @@ class UnderlinedFormTextField extends BaseStatelessWidget {
           fontSize: 14,
           color: Colors.white,
         ),
-        errorStyle: const TextStyle(
+        errorStyle: TextStyle(
           fontSize: 9,
-          color: Color(0xffE80909),
+          color: Theme.of(context).errorColor,
         ),
       ),
     );

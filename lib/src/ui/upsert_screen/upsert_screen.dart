@@ -5,6 +5,7 @@ import 'package:flutter_app_example/src/ui/home/home_controller.dart';
 import 'package:flutter_app_example/src/ui/upsert_screen/widgets/block_header.dart';
 import 'package:flutter_app_example/src/ui/utils/utils.dart';
 import 'package:flutter_app_example/src/widgets/form/cupertino_select_form_field.dart';
+import 'package:flutter_app_example/src/widgets/form/image_form_field.dart';
 import 'package:flutter_app_example/src/widgets/form/underlined_form_text_field.dart';
 
 class UpsertScreen extends BaseStatefulWidget {
@@ -33,6 +34,8 @@ class UpsertScreenState
           name: 'asd',
           selectItems: ['a', 'b', 'c', 'd'],
         ),
+        BlockHeader(text: 'Foto'),
+        ImageFormField(),
       ],
     );
   }
